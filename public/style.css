@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+}
+.box{
+    position: relative;
+    width: 340px;
+    height:200px;
+    /* background-color: rgba(255,255,255,0.1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .circle{
+    position: relative;
+    min-width: 300px;
+    height: 300px;
+    border: 30px solid #fff;
+    border-radius: 50%;
+}
+.box .circle:nth-child(2){
+    left: -78px;
+    border: 30px solid #f00;
+}
+
+/* now start css  */
+.box .circle:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    border: 30px solid transparent;
+    inset: -30px;
+    border-radius: 50%;
+    border-top: 30px solid #fff;
+    border-right: 30px solid #fff;
+    z-index: 100;
+    transform: rotate(-45deg);
+
+}
+.box .circle:nth-child(1)::after{
+    content: '';
+    position: absolute;
+    inset: -30px;
+    border: 30px solid transparent;
+    border-right: 30px solid #000;
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(-65deg);
+    filter: blur(15px);
+}
+
+.box .circle:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    border: 30px solid transparent;
+    inset: -30px;
+    border-radius: 50%;
+    border-bottom: 30px solid #f00;
+    border-left: 30px solid #f00;
+    z-index: 100;
+    transform: rotate(-45deg);
+
+}
+.box .circle:nth-child(2)::after{
+    content: '';
+    position: absolute;
+    inset: -30px;
+    border: 30px solid transparent;
+    border-left: 30px solid #000;
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(-65deg);
+    filter: blur(15px);
+}
